@@ -1,0 +1,38 @@
+# ---------------------------------------------------------------
+# Godot 4.x - corso_godot_2026
+# ---------------------------------------------------------------
+
+# Cache dell'editor: texture importate, shader precompilati, layout
+# delle finestre, UID cache. Rigenerata da sola al primo avvio.
+.godot/
+
+# Build template Android (compaiono solo se installi i template).
+/android/
+
+# File di traduzione compilati dai CSV. La sorgente (.csv) va
+# versionata, il .translation no.
+*.translation
+
+# Build Mono/C# (questo corso usa GDScript, ma non costa nulla).
+.mono/
+data_*/
+
+# ---------------------------------------------------------------
+# VOLUTAMENTE NON IGNORATI
+# ---------------------------------------------------------------
+# export_presets.cfg serve per la lezione sull'esportazione.
+# ATTENZIONE: repo pubblico. Se un giorno configuri un export Android
+# firmato, questo file salva le password del keystore IN CHIARO.
+# Svuota keystore/*_password prima di committare.
+!export_presets.cfg
+
+# *.import contiene gli UID delle risorse: senza, i riferimenti nelle
+# scene si rompono sulle macchine dei partecipanti.
+!*.import
+
+# ---------------------------------------------------------------
+# Sistema operativo
+# ---------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
