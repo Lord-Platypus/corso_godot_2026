@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://mcc320uodtfd"]
+
+[ext_resource type="Script" uid="uid://dgoeik6t3r1ep" path="res://scenes/player/player.gd" id="1_wr5hl"]
+[ext_resource type="AudioStream" uid="uid://cn1k41qpl1p1k" path="res://assets/audio/bestuploadsever67aryan-jump-sound-531048.mp3" id="2_dovo2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_s8yxv"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_s8yxv"]
+
+[node name="Player" type="CharacterBody3D" unique_id=1139937505 node_paths=PackedStringArray("jump_sound")]
+script = ExtResource("1_wr5hl")
+jump_sound = NodePath("AudioStreamPlayer3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=811134417]
+shape = SubResource("CapsuleShape3D_s8yxv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1869212063]
+mesh = SubResource("CapsuleMesh_s8yxv")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer" parent="." unique_id=46955637]
+stream = ExtResource("2_dovo2")

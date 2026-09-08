@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://b80hylitmcsie"]
+
+[ext_resource type="PackedScene" uid="uid://mcc320uodtfd" path="res://scenes/player/player.tscn" id="1_hyk8p"]
+[ext_resource type="PackedScene" uid="uid://cpyw8vo8nr7bk" path="res://scenes/soil/soil.tscn" id="1_iuonh"]
+[ext_resource type="Script" uid="uid://ccmy5raafbh6u" path="res://scenes/main/camera.gd" id="1_k2fmo"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rqr2n"]
+
+[sub_resource type="Sky" id="Sky_fvmv1"]
+sky_material = SubResource("ProceduralSkyMaterial_rqr2n")
+
+[sub_resource type="Environment" id="Environment_s8yxv"]
+background_mode = 2
+sky = SubResource("Sky_fvmv1")
+ambient_light_source = 3
+ambient_light_energy = 0.6
+fog_light_color = Color(0.41983256, 0.45360667, 0.50615025, 1)
+fog_sun_scatter = 1.0
+
+[node name="Main" type="Node3D" unique_id=48664783]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1721058048 node_paths=PackedStringArray("player")]
+transform = Transform3D(0.9659258, 0.0669873, -0.25, 0, 0.9659258, 0.25881904, 0.25881904, -0.25, 0.93301266, 0, 5, 10)
+projection = 1
+fov = 99.715645
+size = 8.0
+script = ExtResource("1_k2fmo")
+player = NodePath("../Player")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1274323727]
+transform = Transform3D(0.8660253, 0.4330127, -0.24999997, 0, 0.49999994, 0.8660254, 0.49999997, -0.74999994, 0.43301263, 0.8251276, 3.3033824, 2.9622571)
+light_color = Color(1, 0.6627451, 0, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1569923835]
+environment = SubResource("Environment_s8yxv")
+
+[node name="Ground" type="Node3D" parent="." unique_id=1888870515]
+
+[node name="Soil" parent="Ground" unique_id=1504212021 instance=ExtResource("1_iuonh")]
+
+[node name="Soil2" parent="Ground" unique_id=22026302 instance=ExtResource("1_iuonh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="Soil3" parent="Ground" unique_id=770282057 instance=ExtResource("1_iuonh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="Soil4" parent="Ground" unique_id=829898462 instance=ExtResource("1_iuonh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="Player" parent="." unique_id=1139937505 instance=ExtResource("1_hyk8p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
