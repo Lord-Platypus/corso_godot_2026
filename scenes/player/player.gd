@@ -1,5 +1,9 @@
 extends CharacterBody3D
 
+@export var speed: int = 5
+@export var gravity_scale: float = 1.0
+@export var jump_velocity: int = 8
+
 func _ready() -> void:
 	print("sono vivo!")
 
@@ -8,6 +12,16 @@ func _physics_process(delta: float) -> void:
 
 	if not is_on_floor():
 		print("sto aggiungendo la gravità")
-		velocity = velocity + get_gravity() * delta
+		velocity = velocity + gravity_scale * get_gravity() * delta
+	elif Input.is_action_just_pressed("jump"):
+		velocity.y = jump_velocity
+
+
+
+	
+	var direction = Input.get_axis("left","right")
+	velocity.x = direction * speed
+
+	velocity.z = 0
 
 	move_and_slide()

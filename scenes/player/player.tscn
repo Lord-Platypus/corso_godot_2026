@@ -8,6 +8,7 @@
 
 [node name="Player" type="CharacterBody3D" unique_id=63247475]
 script = ExtResource("1_8afob")
+gravity_scale = 0.1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1896076238]
 shape = SubResource("CapsuleShape3D_s8yxv")
