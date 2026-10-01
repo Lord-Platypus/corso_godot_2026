@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+@export var mesh: Node3D
 @export var speed: int = 5
 @export var gravity_scale: float = 1.0
 @export var jump_velocity: int = 8
@@ -21,6 +22,12 @@ func _physics_process(delta: float) -> void:
 	
 	var direction = Input.get_axis("left","right")
 	velocity.x = direction * speed
+
+	if direction > 0:
+		mesh.rotation_degrees.y = 90
+	elif direction < 0:
+		mesh.rotation_degrees.y = -90
+	
 
 	velocity.z = 0
 

@@ -1,17 +1,18 @@
 [gd_scene format=3 uid="uid://bgq3e0gqst2ko"]
 
 [ext_resource type="Script" uid="uid://fiwe3fnhpx8m" path="res://scenes/player/player.gd" id="1_8afob"]
+[ext_resource type="PackedScene" uid="uid://cg5a27y7ynqdf" path="res://assets/models/player/SNOWMAN.glb" id="2_dovo2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_s8yxv"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_s8yxv"]
-
-[node name="Player" type="CharacterBody3D" unique_id=63247475]
+[node name="Player" type="CharacterBody3D" unique_id=63247475 node_paths=PackedStringArray("mesh")]
 script = ExtResource("1_8afob")
+mesh = NodePath("SNOWMAN")
 gravity_scale = 0.1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1896076238]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.378152, 0)
 shape = SubResource("CapsuleShape3D_s8yxv")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=599286154]
-mesh = SubResource("CapsuleMesh_s8yxv")
+[node name="SNOWMAN" parent="." unique_id=1752266400 instance=ExtResource("2_dovo2")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)

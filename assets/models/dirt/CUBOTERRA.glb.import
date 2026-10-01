@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bmcxppa7gvfvn"
-path="res://.godot/imported/CUBOTERRA.glb-34e895fc4a158fcf2df76a6ec42eb098.scn"
+uid="uid://dwwebb3t383bk"
+path="res://.godot/imported/CUBOTERRA.glb-6745028cb4b720dd8a9f9d2203fff063.scn"
 
 [deps]
 
-source_file="res://assets/models/cubes/CUBOTERRA.glb"
-dest_files=["res://.godot/imported/CUBOTERRA.glb-34e895fc4a158fcf2df76a6ec42eb098.scn"]
+source_file="res://assets/models/dirt/CUBOTERRA.glb"
+dest_files=["res://.godot/imported/CUBOTERRA.glb-6745028cb4b720dd8a9f9d2203fff063.scn"]
 
 [params]
 
