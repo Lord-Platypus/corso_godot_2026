@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv1fdhjha8gq2"
-path.s3tc="res://.godot/imported/CUBOTERRA_BOX.png-653f25df2e2293d0fd80a519bbf8a02d.s3tc.ctex"
+uid="uid://0ndwsiheo8tg"
+path.s3tc="res://.godot/imported/CUBOTERRA_dirt.png-98ed61eebd7ba2558aa6c2e69dce99ae.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "d2fd467b4d97c0c82b9b9ca58163e203"
+"md5": "4273b851f003a768dfae8e125ea4194c"
 }
 
 [deps]
 
-source_file="res://assets/models/dirt/CUBOTERRA_BOX.png"
-dest_files=["res://.godot/imported/CUBOTERRA_BOX.png-653f25df2e2293d0fd80a519bbf8a02d.s3tc.ctex"]
+source_file="res://assets/models/dirt/CUBOTERRA_dirt.png"
+dest_files=["res://.godot/imported/CUBOTERRA_dirt.png-98ed61eebd7ba2558aa6c2e69dce99ae.s3tc.ctex"]
 
 [params]
 
