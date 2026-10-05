@@ -1,29 +1,46 @@
 [gd_scene format=3 uid="uid://rr3yc0fs1b4g"]
 
 [ext_resource type="PackedScene" uid="uid://bgq3e0gqst2ko" path="res://scenes/player/player.tscn" id="1_dphjl"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_s8yxv"]
-size = Vector3(20, 1, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_s8yxv"]
-size = Vector3(20, 1, 1)
+[ext_resource type="Script" uid="uid://vvc6noflgunb" path="res://scenes/camera/camera.gd" id="2_1fp7r"]
+[ext_resource type="PackedScene" uid="uid://b8x2p0eufg01d" path="res://scenes/blocks/dirt/dirt.tscn" id="2_sl2e5"]
 
 [node name="World" type="Node3D" unique_id=1787487720]
 
 [node name="Player" parent="." unique_id=63247475 instance=ExtResource("1_dphjl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 0)
 
-[node name="Ground" type="StaticBody3D" parent="." unique_id=1459218411]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.5, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1150116849]
-shape = SubResource("BoxShape3D_s8yxv")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=1278194573]
-mesh = SubResource("BoxMesh_s8yxv")
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=433616311]
-transform = Transform3D(1, 0, 0, 0, 0.809017, 0.58778524, 0, -0.58778524, 0.809017, 5, 5, 4)
+[node name="Camera3D" type="Camera3D" parent="." unique_id=433616311 node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 0.9396926, 0.34202012, 0, -0.34202012, 0.9396926, 5, 4, 6)
+script = ExtResource("2_1fp7r")
+target = NodePath("../Player")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1835015916]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4)
+
+[node name="Terrain" type="Node3D" parent="." unique_id=1979350491]
+
+[node name="Dirt" parent="Terrain" unique_id=455450767 instance=ExtResource("2_sl2e5")]
+
+[node name="Dirt2" parent="Terrain" unique_id=1178996831 instance=ExtResource("2_sl2e5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="Dirt3" parent="Terrain" unique_id=1860889953 instance=ExtResource("2_sl2e5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="Dirt4" parent="Terrain" unique_id=2117356775 instance=ExtResource("2_sl2e5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="Dirt5" parent="Terrain" unique_id=587303073 instance=ExtResource("2_sl2e5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="Dirt6" parent="Terrain" unique_id=785895015 instance=ExtResource("2_sl2e5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+
+[node name="Dirt7" parent="Terrain" unique_id=978009891 instance=ExtResource("2_sl2e5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 0)
+
+[node name="Dirt8" parent="Terrain" unique_id=1387388460 instance=ExtResource("2_sl2e5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, 0)
+
+[node name="Dirt9" parent="Terrain" unique_id=450355224 instance=ExtResource("2_sl2e5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 4, 0)

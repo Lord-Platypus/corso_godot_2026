@@ -1,3 +1,13 @@
 [gd_scene format=3 uid="uid://b8x2p0eufg01d"]
 
+[ext_resource type="PackedScene" uid="uid://ckif7mscwv3i1" path="res://assets/models/dirt/CUBOTERRA.glb" id="1_j6h0e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s8yxv"]
+size = Vector3(2, 2, 2)
+
 [node name="Dirt" type="StaticBody3D" unique_id=455450767]
+
+[node name="CUBOTERRA" parent="." unique_id=810960621 instance=ExtResource("1_j6h0e")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=295606882]
+shape = SubResource("BoxShape3D_s8yxv")
