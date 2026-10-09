@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cfxe1pqd3ks7b"]
+
+[ext_resource type="PackedScene" uid="uid://cci2avw8p3sic" path="res://assets/models/Leva.glb" id="1_c7gua"]
+[ext_resource type="Script" uid="uid://bq5trtepelnym" path="res://scenes/lever/lever.gd" id="1_uu53q"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1vivr"]
+radius = 1.0
+
+[node name="Lever" type="Area3D" unique_id=2089222827 node_paths=PackedStringArray("animation_player")]
+script = ExtResource("1_uu53q")
+animation_player = NodePath("Leva2/AnimationPlayer")
+
+[node name="Leva2" parent="." unique_id=1289035734 instance=ExtResource("1_c7gua")]
+
+[node name="Skeleton3D" parent="Leva2/LevaSkeleton" parent_id_path=PackedInt32Array(1289035734, 606353663) index="0" unique_id=369651382]
+bones/1/rotation = Quaternion(0.39269415, 2.1926611e-07, 9.362554e-08, 0.91966915)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2126282913]
+shape = SubResource("SphereShape3D_1vivr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+
+[editable path="Leva2"]

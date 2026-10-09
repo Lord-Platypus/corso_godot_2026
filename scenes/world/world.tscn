@@ -3,14 +3,17 @@
 [ext_resource type="PackedScene" uid="uid://bgq3e0gqst2ko" path="res://scenes/player/player.tscn" id="1_dphjl"]
 [ext_resource type="Script" uid="uid://vvc6noflgunb" path="res://scenes/camera/camera.gd" id="2_1fp7r"]
 [ext_resource type="PackedScene" uid="uid://b8x2p0eufg01d" path="res://scenes/blocks/dirt/dirt.tscn" id="2_sl2e5"]
+[ext_resource type="PackedScene" uid="uid://dx76yafeh1wg4" path="res://scenes/platform/platform.tscn" id="3_v5dby"]
+[ext_resource type="PackedScene" uid="uid://cfxe1pqd3ks7b" path="res://scenes/lever/lever.tscn" id="4_6m72w"]
 
 [node name="World" type="Node3D" unique_id=1787487720]
 
-[node name="Player" parent="." unique_id=63247475 instance=ExtResource("1_dphjl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 0)
+[node name="Player" parent="." unique_id=63247475 node_paths=PackedStringArray("checkpoint") instance=ExtResource("1_dphjl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 4, 0)
+checkpoint = NodePath("../Checkpoint")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=433616311 node_paths=PackedStringArray("target")]
-transform = Transform3D(1, 0, 0, 0, 0.9396926, 0.34202012, 0, -0.34202012, 0.9396926, 5, 4, 6)
+transform = Transform3D(1, 0, 0, 0, 0.9396926, 0.34202012, 0, -0.34202012, 0.9396926, 5, 7, 8)
 script = ExtResource("2_1fp7r")
 target = NodePath("../Player")
 
@@ -19,7 +22,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4)
 
 [node name="Terrain" type="Node3D" parent="." unique_id=1979350491]
 
+[node name="Platform" parent="Terrain" unique_id=388547549 instance=ExtResource("3_v5dby")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 0)
+
 [node name="Dirt" parent="Terrain" unique_id=455450767 instance=ExtResource("2_sl2e5")]
+
+[node name="Dirt10" parent="Terrain" unique_id=1080053706 instance=ExtResource("2_sl2e5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, 0)
+
+[node name="Dirt18" parent="Terrain" unique_id=898058494 instance=ExtResource("2_sl2e5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 4, 0)
+
+[node name="Dirt19" parent="Terrain" unique_id=591357750 instance=ExtResource("2_sl2e5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 4, 0)
 
 [node name="Dirt2" parent="Terrain" unique_id=1178996831 instance=ExtResource("2_sl2e5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
@@ -44,3 +59,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, 0)
 
 [node name="Dirt9" parent="Terrain" unique_id=450355224 instance=ExtResource("2_sl2e5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 4, 0)
+
+[node name="Dirt14" parent="Terrain" unique_id=943492088 instance=ExtResource("2_sl2e5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, 0)
+
+[node name="Dirt15" parent="Terrain" unique_id=1722241662 instance=ExtResource("2_sl2e5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 0, 0)
+
+[node name="Dirt16" parent="Terrain" unique_id=1192909560 instance=ExtResource("2_sl2e5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 0, 0)
+
+[node name="Checkpoint" type="Marker3D" parent="." unique_id=571566008]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Lever" parent="." unique_id=2089222827 instance=ExtResource("4_6m72w")]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, 10, 3, 0)
+
+[connection signal="activate_lever" from="Lever" to="Terrain/Platform" method="on_hide"]

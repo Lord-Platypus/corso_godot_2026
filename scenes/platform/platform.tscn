@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dx76yafeh1wg4"]
+
+[ext_resource type="Script" uid="uid://b85lm536mdsei" path="res://scenes/platform/platform.gd" id="1_7j252"]
+[ext_resource type="PackedScene" uid="uid://b8x2p0eufg01d" path="res://scenes/blocks/dirt/dirt.tscn" id="1_8pv2r"]
+
+[node name="Platform" type="Node3D" unique_id=388547549]
+script = ExtResource("1_7j252")
+
+[node name="Dirt" parent="." unique_id=455450767 instance=ExtResource("1_8pv2r")]
+
+[node name="Dirt2" parent="." unique_id=1572279248 instance=ExtResource("1_8pv2r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="Dirt3" parent="." unique_id=1501776238 instance=ExtResource("1_8pv2r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
