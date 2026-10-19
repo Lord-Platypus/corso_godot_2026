@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bctjv7oblcx3l"]
+
+[ext_resource type="Script" uid="uid://drx0wj1yfqftn" path="res://scenes/time_platform/time_platform.gd" id="1_1qovi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i3xc6"]
+size = Vector3(6, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_i3xc6"]
+size = Vector3(6, 2, 2)
+
+[node name="TimePlatform" type="StaticBody3D" unique_id=575721687]
+script = ExtResource("1_1qovi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=767296207]
+shape = SubResource("BoxShape3D_i3xc6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=110986106]
+mesh = SubResource("BoxMesh_i3xc6")
+
+[node name="Timer" type="Timer" parent="." unique_id=144434982]
+wait_time = 2.0
+
+[connection signal="timeout" from="Timer" to="." method="on_tick"]

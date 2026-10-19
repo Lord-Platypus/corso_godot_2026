@@ -8,8 +8,30 @@ script = ExtResource("1_7j252")
 
 [node name="Dirt" parent="." unique_id=455450767 instance=ExtResource("1_8pv2r")]
 
+[node name="CUBOTERRA" parent="Dirt" index="0" unique_id=810960621]
+visible = false
+
+[node name="CollisionShape3D" parent="Dirt" index="1" unique_id=295606882]
+disabled = true
+
 [node name="Dirt2" parent="." unique_id=1572279248 instance=ExtResource("1_8pv2r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 
+[node name="CUBOTERRA" parent="Dirt2" index="0" unique_id=810960621]
+visible = false
+
+[node name="CollisionShape3D" parent="Dirt2" index="1" unique_id=295606882]
+disabled = true
+
 [node name="Dirt3" parent="." unique_id=1501776238 instance=ExtResource("1_8pv2r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="CUBOTERRA" parent="Dirt3" index="0" unique_id=810960621]
+visible = false
+
+[node name="CollisionShape3D" parent="Dirt3" index="1" unique_id=295606882]
+disabled = true
+
+[editable path="Dirt"]
+[editable path="Dirt2"]
+[editable path="Dirt3"]

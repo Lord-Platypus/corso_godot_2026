@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b8x2p0eufg01d" path="res://scenes/blocks/dirt/dirt.tscn" id="2_sl2e5"]
 [ext_resource type="PackedScene" uid="uid://dx76yafeh1wg4" path="res://scenes/platform/platform.tscn" id="3_v5dby"]
 [ext_resource type="PackedScene" uid="uid://cfxe1pqd3ks7b" path="res://scenes/lever/lever.tscn" id="4_6m72w"]
+[ext_resource type="PackedScene" uid="uid://bctjv7oblcx3l" path="res://scenes/time_platform/time_platform.tscn" id="5_t5ptc"]
 
 [node name="World" type="Node3D" unique_id=1787487720]
 
@@ -69,10 +70,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 0, 0)
 [node name="Dirt16" parent="Terrain" unique_id=1192909560 instance=ExtResource("2_sl2e5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 0, 0)
 
+[node name="TimePlatform" parent="Terrain" unique_id=575721687 instance=ExtResource("5_t5ptc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 0)
+delay = 1.0
+
+[node name="TimePlatform2" parent="Terrain" unique_id=2100516682 instance=ExtResource("5_t5ptc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 3, 0)
+
 [node name="Checkpoint" type="Marker3D" parent="." unique_id=571566008]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Lever" parent="." unique_id=2089222827 instance=ExtResource("4_6m72w")]
 transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, 10, 3, 0)
 
-[connection signal="activate_lever" from="Lever" to="Terrain/Platform" method="on_hide"]
+[connection signal="activate_lever" from="Lever" to="Terrain/Platform" method="on_show"]
+[connection signal="deactivate_lever" from="Lever" to="Terrain/Platform" method="on_hide"]
